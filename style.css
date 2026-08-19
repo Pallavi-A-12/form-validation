@@ -6,8 +6,15 @@
 
 body {
     font-family:Arial, Helvetica, sans-serif;
+    /*
     background-color: #f5f7fb;
     color: #1f2937;
+    */
+
+    background: #20002c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -16,12 +23,18 @@ body {
 }
 
 .container {
-    max-width: 430px;
+    max-width: 500px;
+    max-height: 400px;
 }
 
 .form-card {
-    background-color: #ffffff;
-    padding: 35px;
+    /*background-color: #ffffff;*/
+
+    background: #8e9eab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding: 30px;
     border-radius: 14px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
@@ -30,6 +43,7 @@ body {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 8px;
+    color: #800080;
 }
 
 .sub-title {
@@ -55,16 +69,17 @@ body {
 }
 
 .tab-btn.active {
-    color: #2563eb;
-    border-bottom: 2px solid #2563eb;
+    color: #9e209e;
+    border-bottom: 2px solid #9e209e;
     font-weight: 600;
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 5px;
 }
 
 .form-group label {
+    color: #808080;
     display: block;
     margin-bottom: 7px;
     font-size: 0.9rem;
@@ -73,7 +88,7 @@ body {
 
 .form-group input {
     width: 100%;
-    padding: 12px 14px;
+    padding: 12px 12px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
     font-size: 1rem;
@@ -83,7 +98,7 @@ body {
 }
 
 .form-group input:focus {
-    border-color: #2563eb;
+    border-color: #9e209e;
     box-shadow:
         0 0 0 3px rgba(37, 99, 235, 0.1);
 }
@@ -101,8 +116,8 @@ body {
     padding: 13px;
     border: none;
     border-radius: 8px;
-    background-color: #2563eb;
-    color: #ffffff;
+    background-color: #9e209e;
+    color: #3f3c3c;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -111,6 +126,7 @@ body {
 
 .submit-btn:hover {
     background-color: #1d4ed8;
+    color: #ffffff;
 }
 
 .hidden {
