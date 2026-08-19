@@ -27,7 +27,7 @@ signupTab.addEventListener("click", () => {
 
 });
 
-// Email Validation
+// Email Validation Function
 
 function isValidEmail(email) {
 
@@ -35,28 +35,41 @@ function isValidEmail(email) {
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     return emailPattern.test(email);
+
 }
 
-// Login Validation
+// LOGIN VALIDATION
 
+// Login inputs
 const loginEmail =
     document.getElementById("loginEmail");
 
-const loginPsd = document.getElementById("loginPsd");
+const loginPsd =
+    document.getElementById("loginPsd");
 
-const loginEmailError = document.getElementById("loginEmailError");
 
-const loginPsdError = document.getElementById("loginPsdError");
+// Login error messages
+const loginEmailError =
+    document.getElementById("loginEmailError");
 
+const loginPsdError =
+    document.getElementById("loginPsdError");
+
+
+// Login form submit
 loginForm.addEventListener("submit", (event) => {
 
+    // Stop page reload
     event.preventDefault();
 
     let isValid = true;
 
+
+    // Clear previous errors
     loginEmailError.textContent = "";
     loginPsdError.textContent = "";
 
+    // Email Validation
 
     if (loginEmail.value.trim() === "") {
 
@@ -65,14 +78,17 @@ loginForm.addEventListener("submit", (event) => {
 
         isValid = false;
 
-    } else if (!isValidEmail(loginEmail.value.trim())) {
+    }
+    else if (!isValidEmail(loginEmail.value.trim())) {
 
         loginEmailError.textContent =
             "Please enter a valid email address.";
 
         isValid = false;
+
     }
 
+    // Password Validation
 
     if (loginPsd.value.trim() === "") {
 
@@ -81,49 +97,74 @@ loginForm.addEventListener("submit", (event) => {
 
         isValid = false;
 
-    } else if (loginPsd.value.length < 8) {
+    }
+    else if (loginPsd.value.length < 8) {
 
         loginPsdError.textContent =
             "Password must be at least 8 characters.";
 
         isValid = false;
+
     }
 
+    // Login Success
 
     if (isValid) {
 
-        alert("Login validation successful!");
+        alert("Successfully Login!");
+
+        loginForm.reset();
 
     }
 
 });
 
-// Signup Validation
+// SIGNUP VALIDATION
 
-const signupName = document.getElementById("signupName");
-const signupEmail = document.getElementById("signupEmail");
-const signupPsd = document.getElementById("signupPsd");
-const confirmPsd = document.getElementById("confirmPsd");
+// Signup inputs
+const signupName =
+    document.getElementById("signupName");
 
-const signupNameError = document.getElementById("signupNameError");
-const signupEmailError = document.getElementById("signupEmailError");
-const signupPsdError = document.getElementById("signupPsdError");
-const confirmPsdError = document.getElementById("confirmPsdError");
+const signupEmail =
+    document.getElementById("signupEmail");
 
+const signupPsd =
+    document.getElementById("signupPsd");
+
+const confirmPsd =
+    document.getElementById("confirmPsd");
+
+
+// Signup error messages
+const signupNameError =
+    document.getElementById("signupNameError");
+
+const signupEmailError =
+    document.getElementById("signupEmailError");
+
+const signupPsdError =
+    document.getElementById("signupPsdError");
+
+const confirmPsdError =
+    document.getElementById("confirmPsdError");
+
+
+// Signup form submit
 signupForm.addEventListener("submit", (event) => {
 
+    // Stop page reload
     event.preventDefault();
 
     let isValid = true;
 
-    // Clear previous errors
 
+    // Clear previous errors
     signupNameError.textContent = "";
     signupEmailError.textContent = "";
     signupPsdError.textContent = "";
     confirmPsdError.textContent = "";
 
-    // Validate name
+    // Full Name Validation
 
     if (signupName.value.trim() === "") {
 
@@ -131,9 +172,10 @@ signupForm.addEventListener("submit", (event) => {
             "Full name is required.";
 
         isValid = false;
+
     }
 
-    // Validate email
+    // Email Validation
 
     if (signupEmail.value.trim() === "") {
 
@@ -142,15 +184,17 @@ signupForm.addEventListener("submit", (event) => {
 
         isValid = false;
 
-    } else if (!isValidEmail(signupEmail.value.trim())) {
+    }
+    else if (!isValidEmail(signupEmail.value.trim())) {
 
         signupEmailError.textContent =
             "Please enter a valid email address.";
 
         isValid = false;
+
     }
 
-    // Validate password
+    // Password Validation
 
     if (signupPsd.value === "") {
 
@@ -159,15 +203,17 @@ signupForm.addEventListener("submit", (event) => {
 
         isValid = false;
 
-    } else if (signupPsd.value.length < 8) {
+    }
+    else if (signupPsd.value.length < 8) {
 
         signupPsdError.textContent =
             "Password must be at least 8 characters.";
 
         isValid = false;
+
     }
 
-    // Validate confirm password
+    // Confirm Password Validation
 
     if (confirmPsd.value === "") {
 
@@ -176,21 +222,24 @@ signupForm.addEventListener("submit", (event) => {
 
         isValid = false;
 
-    } else if (confirmPsd.value !== signupPsd.value) {
+    }
+    else if (confirmPsd.value !== signupPsd.value) {
 
         confirmPsdError.textContent =
             "Passwords do not match.";
 
         isValid = false;
+
     }
 
-    // Successful validation
+    // Signup Success
 
     if (isValid) {
 
-        alert("Account created successfully!");
+        alert("Successfully Account Created!");
 
         signupForm.reset();
+
     }
 
 });
