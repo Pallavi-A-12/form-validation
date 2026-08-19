@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+    <header class="header">
+        <a href="#getstarted">Welcome</a>
+        <nav>
+            <a href="#">Get Started</a>
+        </nav>
+    </header>
+    -->
+    <main class="container">
+
+        <div class="form-card">
+            <h1>welcome</h1>
+            <p class="sub-title">
+                Login or Create a new Acount
+            </p>
+
+            <div class="form-tabs">
+            
+                <button type="button" class="tab-btn active" id="loginTab">
+                    Login
+                </button>
+
+                <button type="button" class="tab-btn" id="signupTab">
+                    Sign Up 
+                </button>
+            </div>
+
+            <form id="loginForm" class="form">
+                <div class="form-group">
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+                    <input type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                    >
+
+                    <small class="error" id="loginEmailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPsd">
+                        Password
+                    </label>
+                    <input type="password"
+                            id="loginPsd"
+                            placeholder="Enter your password"
+                    >
+                    <small class="error" id="loginPsdError"></small>
+                </div>
+
+                <button type="button" class="submit-btn">
+                    Login
+                </button>
+            </form>
+
+            <form id="signupForm" class="form hidden">
+                <div class="form-group">
+
+                    <label for="signupName">
+                        Full Name
+                    </label>
+                    <input type="text"
+                            id="signupName"
+                            placeholder="Enter your full name"
+                    >
+                    <small class="error" id="signupNameError"></small>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="signupEmail">
+                        Email
+                    </label>
+                    <input type="email"
+                            id="signupEmail"
+                            placeholder="Enter your email"
+                    >
+                    <small class="error" id="signupEmailError"></small>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="signupPsd">
+                        Password
+                    </label>
+                    <input type="password"
+                            id="signupPsd"
+                            placeholder="Minimum 8 characters"
+                    >
+                    <small class="error signupPsdError"></small>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="confirmPsd">
+                        Confirm Password
+                    </label>
+                    <input type="password"
+                            id="confirmPsd"
+                            placeholder="Re-enter your password"
+                    >
+                    <small class="error" id="confirmPsdError"></small>
+
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Create Account
+                </button>
+
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
