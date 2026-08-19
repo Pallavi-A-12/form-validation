@@ -4,6 +4,8 @@ A responsive Login and Signup Form Validation project built using **HTML, CSS, a
 
 This project was developed as part of **Level 1 – Task 3** of my Web Development Internship at **RaushByte Technologies**.
 
+![Preview of form Validation](./assets/images/preview.png)
+
 ---
 
 ## 📌 Project Overview
