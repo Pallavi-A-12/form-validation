@@ -36,3 +36,64 @@ function isValidEmail(email) {
 
     return emailPattern.test(email);
 }
+
+// Login Validation
+
+const loginEmail =
+    document.getElementById("loginEmail");
+
+const loginPsd = document.getElementById("loginPsd");
+
+const loginEmailError = document.getElementById("loginEmailError");
+
+const loginPsdError = document.getElementById("loginPsdError");
+
+loginForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    let isValid = true;
+
+    loginEmailError.textContent = "";
+    loginPsdError.textContent = "";
+
+
+    if (loginEmail.value.trim() === "") {
+
+        loginEmailError.textContent =
+            "Email is required.";
+
+        isValid = false;
+
+    } else if (!isValidEmail(loginEmail.value.trim())) {
+
+        loginEmailError.textContent =
+            "Please enter a valid email address.";
+
+        isValid = false;
+    }
+
+
+    if (loginPsd.value.trim() === "") {
+
+        loginPsdError.textContent =
+            "Password is required.";
+
+        isValid = false;
+
+    } else if (loginPsd.value.length < 8) {
+
+        loginPsdError.textContent =
+            "Password must be at least 8 characters.";
+
+        isValid = false;
+    }
+
+
+    if (isValid) {
+
+        alert("Login validation successful!");
+
+    }
+
+});
