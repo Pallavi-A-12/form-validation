@@ -97,3 +97,100 @@ loginForm.addEventListener("submit", (event) => {
     }
 
 });
+
+// Signup Validation
+
+const signupName = document.getElementById("signupName");
+const signupEmail = document.getElementById("signupEmail");
+const signupPsd = document.getElementById("signupPsd");
+const confirmPsd = document.getElementById("confirmPsd");
+
+const signupNameError = document.getElementById("signupNameError");
+const signupEmailError = document.getElementById("signupEmailError");
+const signupPsdError = document.getElementById("signupPsdError");
+const confirmPsdError = document.getElementById("confirmPsdError");
+
+signupForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    let isValid = true;
+
+    // Clear previous errors
+
+    signupNameError.textContent = "";
+    signupEmailError.textContent = "";
+    signupPsdError.textContent = "";
+    confirmPsdError.textContent = "";
+
+    // Validate name
+
+    if (signupName.value.trim() === "") {
+
+        signupNameError.textContent =
+            "Full name is required.";
+
+        isValid = false;
+    }
+
+    // Validate email
+
+    if (signupEmail.value.trim() === "") {
+
+        signupEmailError.textContent =
+            "Email is required.";
+
+        isValid = false;
+
+    } else if (!isValidEmail(signupEmail.value.trim())) {
+
+        signupEmailError.textContent =
+            "Please enter a valid email address.";
+
+        isValid = false;
+    }
+
+    // Validate password
+
+    if (signupPsd.value === "") {
+
+        signupPsdError.textContent =
+            "Password is required.";
+
+        isValid = false;
+
+    } else if (signupPsd.value.length < 8) {
+
+        signupPsdError.textContent =
+            "Password must be at least 8 characters.";
+
+        isValid = false;
+    }
+
+    // Validate confirm password
+
+    if (confirmPsd.value === "") {
+
+        confirmPsdError.textContent =
+            "Please confirm your password.";
+
+        isValid = false;
+
+    } else if (confirmPsd.value !== signupPsd.value) {
+
+        confirmPsdError.textContent =
+            "Passwords do not match.";
+
+        isValid = false;
+    }
+
+    // Successful validation
+
+    if (isValid) {
+
+        alert("Account created successfully!");
+
+        signupForm.reset();
+    }
+
+});
