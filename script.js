@@ -26,3 +26,13 @@ signupTab.addEventListener("click", () => {
     loginTab.classList.remove("active");
 
 });
+
+// Email Validation
+
+function isValidEmail(email) {
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return emailPattern.test(email);
+}
